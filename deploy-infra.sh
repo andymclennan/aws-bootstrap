@@ -4,6 +4,7 @@ STACK_NAME=awsbootstrap
 REGION=us-east-1 
 CLI_PROFILE=awsbootstrap
 EC2_INSTANCE_TYPE=t2.micro 
+DOMAIN=educative-cloud-course.com
 
 GH_ACCESS_TOKEN=$(cat ~/.github/aws-bootstrap-access-token)
 GH_OWNER=$(cat ~/.github/aws-bootstrap-owner)
@@ -60,6 +61,7 @@ aws cloudformation deploy \
   --capabilities CAPABILITY_NAMED_IAM \
   --parameter-overrides \
     EC2InstanceType=$EC2_INSTANCE_TYPE \
+    Domain=$DOMAIN \
     GitHubOwner=$GH_OWNER \
     GitHubRepo=$GH_REPO \
     GitHubBranch=$GH_BRANCH \
